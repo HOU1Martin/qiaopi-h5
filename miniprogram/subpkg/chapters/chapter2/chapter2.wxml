@@ -1,0 +1,212 @@
+<!--chapter2.wxml-->
+<view class="content-page">
+
+  <!-- ========== 悬浮按钮 ========== -->
+  <view class="float-catalog" bindtap="onGoCatalog">
+    <text class="float-catalog-icon">目录</text>
+  </view>
+  <view class="float-home" bindtap="onGoHome">
+    <text class="float-home-icon">首页</text>
+  </view>
+
+  <!-- ========== Hero 侨批信纸首屏 ========== -->
+  <view class="hero-section">
+    <image class="hero-image" src="/subpkg/images/P2-1.jpg" mode="aspectFill"></image>
+    <view class="hero-mask"></view>
+    <view class="hero-content">
+      <text class="hero-subtitle">第 二 章</text>
+      <text class="hero-title">革命尚未成功</text>
+      <text class="hero-title-cn">同志仍须努力</text>
+      <view class="hero-divider"></view>
+      <text class="hero-desc">馆藏侨批档案介绍（二）</text>
+    </view>
+    <view class="scroll-hint">
+      <text class="scroll-hint-text">向下滑动开启</text>
+      <view class="scroll-hint-arrow"></view>
+    </view>
+  </view>
+
+  <!-- ========== 简介部分（不显示标题） ========== -->
+  <view class="section intro-section {{introVisible ? 'visible' : ''}}">
+    <view class="intro-corner corner-tl"></view>
+    <view class="intro-corner corner-tr"></view>
+    <view class="intro-corner corner-bl"></view>
+    <view class="intro-corner corner-br"></view>
+
+    <text class="intro-quote">"天不测尚有风云，莫言吾辈青年热血之人，岂有错过之理……"</text>
+    <view class="intro-divider"></view>
+    <text class="intro-text">
+      在汕头市档案馆馆藏侨批中，有一封<text class="intro-em">吴乾祥寄给张一民先生</text>的信，从字里行间我们仍然能看到那真挚的友谊和热血青年的壮志豪情。
+    </text>
+  </view>
+
+  <!-- ========== 侨批原信图片 ========== -->
+  <view class="section archive-section {{archiveVisible ? 'visible' : ''}}">
+    <view class="archive-frame">
+      <view class="archive-corner corner-tl"></view>
+      <view class="archive-corner corner-tr"></view>
+      <view class="archive-corner corner-bl"></view>
+      <view class="archive-corner corner-br"></view>
+
+      <view class="archive-tag">
+        <text class="archive-tag-text">馆 藏 原 件</text>
+      </view>
+
+      <image
+        class="archive-image"
+        src="/subpkg/images/P2-1.jpg"
+        mode="aspectFit"
+        bindtap="onPreviewImage"
+        data-src="/subpkg/images/P2-1.jpg"
+      ></image>
+
+      <view class="archive-caption">
+        <text class="archive-caption-line"></text>
+        <text class="archive-caption-text">庚六月十三日 · 吴乾祥寄张一民先生书</text>
+        <text class="archive-caption-line"></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 释文部分 ========== -->
+  <view class="section letter-section {{letterVisible ? 'visible' : ''}}">
+    <view class="letter-header">
+      <text class="letter-header-text">释 文</text>
+    </view>
+
+    <view class="letter-paper">
+      <text class="letter-salute">张一民先生足下：</text>
+
+      <text class="letter-body">仲春<text class="letter-note-num">（1）</text>别后，怱怱<text class="letter-note-num">（2）</text>数月。每忆丰标<text class="letter-note-num">（3）</text>，时思怀想。无赖<text class="letter-note-ref">（奈）</text><text class="letter-note-num">（4）</text>阻隔万里，尺素<text class="letter-note-num">（5）</text>难通，为恨奚如<text class="letter-note-num">（6）</text>？遥维起居，定卜<text class="letter-note-num">（7）</text>胜常为慰。</text>
+
+      <text class="letter-body">天不测尚有风云，莫言吾辈青年热血之人岂无<text class="letter-note-ref">（有）</text><text class="letter-note-num">（8）</text>错过之理？望我兄勿以小过而灰心，□其生平之志。语云："见兔而顾犬，未为逸<text class="letter-note-ref">（晚）</text>也；亡羊而补牢，未为迟也。"<text class="letter-note-num">（9）</text></text>
+
+      <text class="letter-body">如我兄之才，何求不成？以弟愚见莫如改习英文，前程可以希望，此弟所为我兄之计划。夫人生如白驹过隙，勿涂以迁延岁月，坐失机会。如弟才疎<text class="letter-note-ref">（疏）</text>学浅，斗胆直言，望祈原谅。兹去大洋银四元查收，望祈将经过情行<text class="letter-note-ref">（形）</text>回音示晓。此请大安。</text>
+
+      <view class="letter-signature">
+        <text class="letter-body">庚六月十三日</text>
+        <text class="letter-body letter-strike">吴乾祥手书</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 注解部分 ========== -->
+  <view class="section notes-section {{notesVisible ? 'visible' : ''}}">
+    <view class="letter-header">
+      <text class="letter-header-text">注 解</text>
+    </view>
+
+    <view class="notes-list">
+      <view class="note-item {{notesVisible ? 'visible' : ''}}">
+        <text class="note-num">（1）</text>
+        <text class="note-text"><text class="note-bold">仲春：</text>二月。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.06s">
+        <text class="note-num">（2）</text>
+        <text class="note-text"><text class="note-bold">怱怱：</text>匆匆。形容时间过得快。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.12s">
+        <text class="note-num">（3）</text>
+        <text class="note-text"><text class="note-bold">丰标：</text>风度，仪态。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.18s">
+        <text class="note-num">（4）</text>
+        <text class="note-text"><text class="note-bold">无赖（奈）：</text>潮汕方言"赖""奈"同音，此处误书。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.24s">
+        <text class="note-num">（5）</text>
+        <text class="note-text"><text class="note-bold">尺素：</text>指书信。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.3s">
+        <text class="note-num">（6）</text>
+        <text class="note-text"><text class="note-bold">为恨奚如：</text>奚如为恨，还有什么能像这样更让人遗憾。奚，何也，"以夫子之行为奚如"（《庄子·天运》）；恨，悔也，"岂尝有恨者乎"（《汉书·李广传》）</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.36s">
+        <text class="note-num">（7）</text>
+        <text class="note-text"><text class="note-bold">卜：</text>料想。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.42s">
+        <text class="note-num">（8）</text>
+        <text class="note-text"><text class="note-bold">无（有）：</text>潮汕方言"无""有"同音，此处误书。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.48s">
+        <text class="note-num">（9）</text>
+        <text class="note-text"><text class="note-bold">"见兔而顾犬……未为迟也"：</text>看到野兔再回头呼唤猎狗，还不算太晚；丢掉了羊再去修补羊圈，也不算太迟。此句演化为成语"见兔顾犬"、"亡羊补牢"，比喻发现问题及时采取善后措施，以免酿成大错。（详见《战国策·楚四·庄辛谓楚襄王》）</text>
+      </view>
+    </view>
+
+    <!-- 结语 -->
+    <view class="notes-conclusion {{notesVisible ? 'visible' : ''}}">
+      <text class="conclusion-text">从信中我们得知，张一民先生因为一些原因而失意，好友用"天有不测风云"对他进行劝慰，塞翁失马焉知非福。"吾辈热血青年岂无错过之理？"更是激励好友尽快从失意中走出来，尽快投入奋斗之中，字里行间满满的都是对友人的激励和真诚的劝慰，今天读起来仍让人感动。</text>
+    </view>
+
+    <view class="notes-conclusion {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.2s">
+      <text class="conclusion-text">除了信本身的内容，我们仍然可以从这封信的信纸上寻找到一些细节，比如页眉位置：</text>
+    </view>
+
+    <!-- ========== 总理遗嘱：信纸页眉 ========== -->
+    <view class="testament-section {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.3s">
+      <view class="testament-frame">
+        <view class="testament-tag">
+          <text class="testament-tag-text">信 纸 页 眉</text>
+        </view>
+        <image
+          class="testament-image"
+          src="/subpkg/images/P2-3.jpg"
+          mode="widthFix"
+          bindtap="onPreviewImage"
+          data-src="/subpkg/images/P2-3.jpg"
+        ></image>
+        <view class="testament-caption">
+          <text class="testament-caption-line"></text>
+          <text class="testament-caption-text">吴乾祥所用信纸页眉 · 印有总理遗嘱</text>
+          <text class="testament-caption-line"></text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 释文：总理遗嘱 -->
+    <view class="testament-text-section {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.4s">
+      <view class="testament-title">
+        <text class="testament-title-cn">总理遗嘱</text>
+        <text class="testament-title-en">SUN YAT-SEN'S LAST WILL</text>
+      </view>
+      <view class="testament-divider"></view>
+      <text class="testament-body">"余致力国民革命凡四十年，其目的在求中国之自由平等。积四十年之经验深知欲达到此目的，必须唤起民众及联合世界上以平等待我之民族共同奋斗。</text>
+      <text class="testament-body">现在革命尚未成功，凡我同志，务须依照余所著《建国方略》《建国大纲》《三民主义》及《第一次全国代表大会宣言》，继续努力，以求贯彻。</text>
+      <text class="testament-body">最近主张开国民会议及废除不平等条约，尤须于最短期间促其实现。</text>
+      <text class="testament-body">是所至嘱！"</text>
+      <view class="testament-signature">
+        <text class="testament-signature-text">—— 孙 文</text>
+      </view>
+    </view>
+
+    <!-- 补充结语 -->
+    <view class="notes-conclusion {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.5s">
+      <text class="conclusion-text">孙中山在病危之中，仍念念不忘拯救中国、拯救民众，他在遗嘱中谆谆以此为嘱，把希望寄托于"唤起民众"，表现了他强烈的爱国之心。寄信之人选择这一信纸也必是深思熟虑，用"革命尚未成功，同志仍须努力"的伟大目标激励热血好友，可见其对好友、对国家真挚的情怀。</text>
+    </view>
+  </view>
+
+  <!-- ========== 结尾印章 ========== -->
+  <view class="footer">
+    <view class="footer-divider"></view>
+    <view class="footer-seal">
+      <text class="footer-seal-text">家国</text>
+    </view>
+    <text class="footer-text">革命尚未成功</text>
+    <text class="footer-sub">—— 馆藏侨批档案介绍（二）</text>
+  </view>
+
+  <!-- ========== 底部导航按钮 ========== -->
+  <view class="nav-buttons">
+    <button class="nav-btn nav-btn-back" bindtap="onPrevChapter">
+      <text class="nav-btn-icon nav-btn-icon-back">←</text>
+      <text class="nav-btn-label">上一章节</text>
+    </button>
+    <button class="nav-btn nav-btn-next" bindtap="onNextChapter">
+      <text class="nav-btn-label">下一章节</text>
+      <text class="nav-btn-icon nav-btn-icon-next">→</text>
+    </button>
+  </view>
+
+</view>

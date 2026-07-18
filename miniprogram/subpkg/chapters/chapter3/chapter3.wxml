@@ -1,0 +1,178 @@
+<!--chapter3.wxml-->
+<view class="content-page">
+
+  <!-- ========== 悬浮按钮 ========== -->
+  <view class="float-catalog" bindtap="onGoCatalog">
+    <text class="float-catalog-icon">目录</text>
+  </view>
+  <view class="float-home" bindtap="onGoHome">
+    <text class="float-home-icon">首页</text>
+  </view>
+
+  <!-- ========== Hero 侨批信纸首屏 ========== -->
+  <view class="hero-section">
+    <image class="hero-image" src="/subpkg/images/P3-1.jpg" mode="aspectFill"></image>
+    <view class="hero-mask"></view>
+    <view class="hero-content">
+      <text class="hero-subtitle">第 三 章</text>
+      <text class="hero-title">斑斑血泪斑斑恨</text>
+      <text class="hero-title-cn">抗日战争时期潮汕侨批</text>
+      <view class="hero-divider"></view>
+      <text class="hero-desc">馆藏侨批档案介绍（三）</text>
+    </view>
+    <view class="scroll-hint">
+      <text class="scroll-hint-text">向下滑动开启</text>
+      <view class="scroll-hint-arrow"></view>
+    </view>
+  </view>
+
+  <!-- ========== 简介部分（不显示标题） ========== -->
+  <view class="section intro-section {{introVisible ? 'visible' : ''}}">
+    <view class="intro-corner corner-tl"></view>
+    <view class="intro-corner corner-tr"></view>
+    <view class="intro-corner corner-bl"></view>
+    <view class="intro-corner corner-br"></view>
+
+    <text class="intro-quote">"玉信中所云我岳父大人不幸于潮城被寇机惨遭轰炸，与世长逝……"</text>
+    <view class="intro-divider"></view>
+    <text class="intro-text">
+      <text class="intro-em">1937 年8 月31 日</text>开始，日军飞机多次到潮汕地区侦察和轰炸，无数无辜平民被炸死伤。在汕头市档案馆馆藏侨批中，有一封<text class="intro-em">新加坡华侨林忠发寄给母亲</text>的信便留下了这段历史痕迹。在信中，我们可以得知其岳父就在轰炸中不幸丧生，这封言辞悲痛的侨批是日本军国主义发动侵华战争斑斑恶行的见证。
+    </text>
+  </view>
+
+  <!-- ========== 侨批原信图片 ========== -->
+  <view class="section archive-section {{archiveVisible ? 'visible' : ''}}">
+    <view class="archive-frame">
+      <view class="archive-corner corner-tl"></view>
+      <view class="archive-corner corner-tr"></view>
+      <view class="archive-corner corner-bl"></view>
+      <view class="archive-corner corner-br"></view>
+
+      <view class="archive-tag">
+        <text class="archive-tag-text">馆 藏 原 件</text>
+      </view>
+
+      <image
+        class="archive-image"
+        src="/subpkg/images/P3-1.jpg"
+        mode="aspectFit"
+        bindtap="onPreviewImage"
+        data-src="/subpkg/images/P3-1.jpg"
+      ></image>
+
+      <view class="archive-caption">
+        <text class="archive-caption-line"></text>
+        <text class="archive-caption-text">己三月初拾日 · 新加坡华侨林忠发寄母亲书</text>
+        <text class="archive-caption-line"></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 释文部分 ========== -->
+  <view class="section letter-section {{letterVisible ? 'visible' : ''}}">
+    <view class="letter-header">
+      <text class="letter-header-text">释 文</text>
+    </view>
+
+    <view class="letter-paper">
+      <text class="letter-salute">慈亲<text class="letter-note-num">（1）</text>大人尊前福安：</text>
+
+      <text class="letter-body">敬禀者。顷<text class="letter-note-num">（2）</text>读慈谕<text class="letter-note-num">（3）</text>，展颂披<text class="letter-note-num">（4）</text>悉<text class="letter-note-num">（5）</text>。籍<text class="letter-note-ref">（及）</text><text class="letter-note-num">（6）</text>知大人玉体康泰，安居集福，诸位兄长绥和清泰，可知祝以为颂。儿迩来<text class="letter-note-num">（7）</text>幸托洪福，身子幸托平善，毋庸<text class="letter-note-num">（8）</text>远念为祷。</text>
+
+      <text class="letter-body">玉信中所云我岳父大人不幸于潮城被寇机惨遭轰炸，与世长逝。承教<text class="letter-note-num">（9）</text>之词极为痛惜悲哀，然但刻下市惨冷淡，生活非常困苦，虽微末之生意，尽其所能仍难维持。</text>
+
+      <text class="letter-body">然对吾岳父丧仪一事，儿理应多寄，缘<text class="letter-note-num">（10）</text>力其所能之故，幸希愿<text class="letter-note-ref">（原）</text>谅。兹特告恳者，务望大人暨诸位兄长尽其能力代为料理一切。是所铭感荣日五中<text class="letter-note-num">（11）</text>，容后面谢！</text>
+
+      <text class="letter-body">兹值期轮之便，附国币贰拾伍元正<text class="letter-note-ref">（整）</text>，到希查处用。祈乞示覆<text class="letter-note-ref">（复）</text>为荷<text class="letter-note-ref">（贺）</text>。余情另告。</text>
+
+      <text class="letter-body">并祝金安！</text>
+
+      <view class="letter-signature">
+        <text class="letter-body">己三月初拾日</text>
+        <text class="letter-body letter-strike">儿林忠发寄</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 注解部分 ========== -->
+  <view class="section notes-section {{notesVisible ? 'visible' : ''}}">
+    <view class="letter-header">
+      <text class="letter-header-text">注 解</text>
+    </view>
+
+    <view class="notes-list">
+      <view class="note-item {{notesVisible ? 'visible' : ''}}">
+        <text class="note-num">（1）</text>
+        <text class="note-text"><text class="note-bold">慈亲：</text>母亲。旧时认为父严母慈，故称父亲为"家严"，称母亲为"家慈"。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.05s">
+        <text class="note-num">（2）</text>
+        <text class="note-text"><text class="note-bold">顷：</text>刚、才。顷之、有顷，指时间才过不久。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.1s">
+        <text class="note-num">（3）</text>
+        <text class="note-text"><text class="note-bold">谕：</text>上告下的通称，如面谕、谕示。侨批中常将长辈的信称为"谕、教、示"等，以示尊敬。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.15s">
+        <text class="note-num">（4）</text>
+        <text class="note-text"><text class="note-bold">披：</text>开，展开。"披三条之广路"（《文选·班固&lt;西都赋&gt;》）</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.2s">
+        <text class="note-num">（5）</text>
+        <text class="note-text"><text class="note-bold">悉：</text>知道。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.25s">
+        <text class="note-num">（6）</text>
+        <text class="note-text"><text class="note-bold">籍：</text>此处通"及"，等到。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.3s">
+        <text class="note-num">（7）</text>
+        <text class="note-text"><text class="note-bold">迩来：</text>近来。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.35s">
+        <text class="note-num">（8）</text>
+        <text class="note-text"><text class="note-bold">毋庸：</text>不用。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.4s">
+        <text class="note-num">（9）</text>
+        <text class="note-text"><text class="note-bold">教：</text>同"谕"，见注释3。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.45s">
+        <text class="note-num">（10）</text>
+        <text class="note-text"><text class="note-bold">缘：</text>因为。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.5s">
+        <text class="note-num">（11）</text>
+        <text class="note-text"><text class="note-bold">五中：</text>五脏，此处指内心。铭感五中，指由衷地铭记在心。</text>
+      </view>
+    </view>
+
+    <!-- 结语 -->
+    <view class="notes-conclusion {{notesVisible ? 'visible' : ''}}">
+      <text class="conclusion-text">今天（9月3日）是中国人民抗日战争胜利第<text class="intro-em">78</text>周年纪念日。日本侵华战争这一血泪斑斑的历史在侨批中也留下了不可磨灭的痕迹，值得后人警醒、深思。</text>
+    </view>
+  </view>
+
+  <!-- ========== 结尾印章 ========== -->
+  <view class="footer">
+    <view class="footer-divider"></view>
+    <view class="footer-seal">
+      <text class="footer-seal-text">家国</text>
+    </view>
+    <text class="footer-text">斑斑血泪斑斑恨</text>
+    <text class="footer-sub">—— 馆藏侨批档案介绍（三）</text>
+  </view>
+
+  <!-- ========== 底部导航按钮 ========== -->
+  <view class="nav-buttons">
+    <button class="nav-btn nav-btn-back" bindtap="onPrevChapter">
+      <text class="nav-btn-icon nav-btn-icon-back">←</text>
+      <text class="nav-btn-label">上一章节</text>
+    </button>
+    <button class="nav-btn nav-btn-next" bindtap="onNextChapter">
+      <text class="nav-btn-label">下一章节</text>
+      <text class="nav-btn-icon nav-btn-icon-next">→</text>
+    </button>
+  </view>
+
+</view>

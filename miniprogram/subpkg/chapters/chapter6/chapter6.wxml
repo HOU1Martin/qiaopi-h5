@@ -1,0 +1,193 @@
+<!--chapter6.wxml-->
+<view class="content-page">
+
+  <!-- ========== 悬浮按钮 ========== -->
+  <view class="float-catalog" bindtap="onGoCatalog">
+    <text class="float-catalog-icon">目录</text>
+  </view>
+  <view class="float-home" bindtap="onGoHome">
+    <text class="float-home-icon">首页</text>
+  </view>
+
+  <!-- ========== Hero ========== -->
+  <view class="hero-section">
+    <image class="hero-image" src="/subpkg/images/P6-1.jpg" mode="aspectFill"></image>
+    <view class="hero-mask"></view>
+    <view class="hero-content">
+      <text class="hero-subtitle">第 六 章</text>
+      <text class="hero-title">国际风云</text>
+      <text class="hero-title-cn">波及南洋</text>
+      <view class="hero-divider"></view>
+      <text class="hero-desc">抗日战争时期潮汕侨批（四）</text>
+    </view>
+    <view class="scroll-hint">
+      <text class="scroll-hint-text">向下滑动开启</text>
+      <view class="scroll-hint-arrow"></view>
+    </view>
+  </view>
+
+  <!-- ========== 简介部分（不显示标题） ========== -->
+  <view class="section intro-section {{introVisible ? 'visible' : ''}}">
+    <view class="intro-corner corner-tl"></view>
+    <view class="intro-corner corner-tr"></view>
+    <view class="intro-corner corner-bl"></view>
+    <view class="intro-corner corner-br"></view>
+
+    <text class="intro-quote">"莫奈国际风云波及泰国，在我现今谋利格外艰难……"</text>
+    <view class="intro-divider"></view>
+    <text class="intro-text">
+      <text class="intro-em">1937 年以后</text>，日本法西斯在中国陷入持久战的泥潭，在国际上日益陷于孤立。为了摆脱困境，日军大本营开始将下一个侵略目标指向东南亚。当时，漂泊东南亚的华侨在战争的阴云下虽是勉强维持，却也家批不断，饱含对家乡的思念。在汕头市档案馆馆藏侨批中，就有几封侨批记录下了这段历史：
+    </text>
+  </view>
+
+  <!-- ========== 侨批原信 ========== -->
+  <view class="section archive-section {{archiveVisible ? 'visible' : ''}}">
+    <view class="archive-frame">
+      <view class="archive-corner corner-tl"></view>
+      <view class="archive-corner corner-tr"></view>
+      <view class="archive-corner corner-bl"></view>
+      <view class="archive-corner corner-br"></view>
+      <view class="archive-tag">
+        <text class="archive-tag-text">馆 藏 原 件</text>
+      </view>
+      <image class="archive-image" src="/subpkg/images/P6-1.jpg" mode="aspectFit"
+        bindtap="onPreviewImage" data-src="/subpkg/images/P6-1.jpg"></image>
+      <view class="archive-caption">
+        <text class="archive-caption-line"></text>
+        <text class="archive-caption-text">廿八.八廿四 · 金丰寄荆妻弟妇儿侄书</text>
+        <text class="archive-caption-line"></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 释文 · 其一 ========== -->
+  <view class="section letter-section {{letterVisible ? 'visible' : ''}}">
+    <view class="letter-header">
+      <text class="letter-header-text">释 文 · 其 一</text>
+    </view>
+
+    <view class="letter-paper">
+      <text class="letter-salute">荆妻、弟妇、儿侄收知：</text>
+
+      <text class="letter-body">昨接回批，内泐<text class="letter-note-num">（1）</text>数种事情，其最主要者惟超先母神灵西度，此全人道至理行为。莫奈<text class="letter-note-num">（2）</text>国际风云波及泰国，在我现今谋利格外艰难，以上逐月所寄具是在维持设法中，勿误认是丰裕之筹拨也。现再寄去国币壹佰元，至时捡收下也。</text>
+
+      <text class="letter-body">然则备香纸一付，命同麟儿携往先母灵前，伐<text class="letter-note-ref">（代）</text>余诉其不孝之罪。候有厚利入手，自当多寄以作佛事之需。刻暂先顾生人口食，后及其他。</text>
+
+      <text class="letter-body">笔至于此，惟泪溶溶<text class="letter-note-num">（3）</text>，余候后叙。</text>
+
+      <text class="letter-body">喜之，两地平安！</text>
+
+      <view class="letter-signature">
+        <text class="letter-body">廿八.八廿四</text>
+        <text class="letter-body letter-strike">金丰字</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 历史照片 ========== -->
+  <view class="section archive-section-h {{historyVisible ? 'visible' : ''}}">
+    <view class="archive-frame">
+      <view class="archive-corner corner-tl"></view>
+      <view class="archive-corner corner-tr"></view>
+      <view class="archive-corner corner-bl"></view>
+      <view class="archive-corner corner-br"></view>
+      <view class="archive-tag">
+        <text class="archive-tag-text">历 史 图 像</text>
+      </view>
+      <image class="archive-image archive-image-wide" src="/subpkg/images/P6-2.jpg" mode="aspectFit"
+        bindtap="onPreviewImage" data-src="/subpkg/images/P6-2.jpg"></image>
+      <view class="archive-caption">
+        <text class="archive-caption-line"></text>
+        <text class="archive-caption-text">太平洋战争时期 · 南洋华侨生活影像</text>
+        <text class="archive-caption-line"></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 释文 · 其二 ========== -->
+  <view class="section letter-section-2 {{letter2Visible ? 'visible' : ''}}">
+    <view class="letter-header">
+      <text class="letter-header-text">释 文 · 其 二</text>
+    </view>
+
+    <view class="letter-paper">
+      <text class="letter-salute">慈亲大人万福：</text>
+
+      <text class="letter-body">敬禀者，昨天接来慈谕，诸情拜悉。但因中日争战十分影响南洋生活，对麟儿定聘银项，处此目前，不肖实难应付。祈母亲设法她方延<text class="letter-note-num">（4）</text>之。现惟寄上国币贰拾元以续家用，到时查收。余容后禀。</text>
+
+      <text class="letter-body">顺祝两地平安！</text>
+
+      <view class="letter-signature">
+        <text class="letter-body">拾贰月十一日</text>
+        <text class="letter-body letter-strike">儿金丰禀</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 注解部分 ========== -->
+  <view class="section notes-section {{notesVisible ? 'visible' : ''}}">
+    <view class="letter-header">
+      <text class="letter-header-text">注 解</text>
+    </view>
+
+    <view class="notes-list">
+      <view class="note-item {{notesVisible ? 'visible' : ''}}">
+        <text class="note-num">（1）</text>
+        <text class="note-text"><text class="note-bold">泐（lè）：</text>铭刻、书写。手泐，旧时书信常用语，如：手泐平安。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.08s">
+        <text class="note-num">（2）</text>
+        <text class="note-text"><text class="note-bold">莫奈：</text>无奈。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.16s">
+        <text class="note-num">（3）</text>
+        <text class="note-text"><text class="note-bold">溶溶：</text>流动的样子，此处形容泪水流动的样子。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.24s">
+        <text class="note-num">（4）</text>
+        <text class="note-text"><text class="note-bold">延：</text>借，筹措。</text>
+      </view>
+    </view>
+
+    <!-- 历史背景 -->
+    <view class="notes-conclusion {{notesVisible ? 'visible' : ''}}">
+      <text class="conclusion-text">太平洋战争期间，日军占领了东南亚及西太平洋广大地区，并在当地实行严厉的军政统制以维持其庞大的军费开支，经济统治则是其军政统治的核心内容。日本通过设立南方开发金库和发行南方券等方式，在东南亚各地建立了以南方开发金库为核心的金融统治制度。南方开发金库通过其特权发行大量货币，收夺占用大量东南亚的资金，对东南亚地区开展金融掠夺，造成东南亚人民生活格外艰难。</text>
+    </view>
+
+    <!-- 学术引用 -->
+    <view class="quote-source {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.15s">
+      <text class="quote-source-text">"军票和南方券的滥用，乃是一种'无本掠夺'，在东南亚各占领区引起了恶性的通货膨胀和物价飞涨……在军政当局的统制政策下，东南亚居民的储蓄资金被强迫转换为一张薄纸……"</text>
+      <text class="quote-source-cite">—— 毕世鸿《太平洋战争期间日本对东南亚的经济统制》[D].天津：南开大学.2012</text>
+    </view>
+  </view>
+
+  <!-- 结语 -->
+  <view class="section notes-section-2 {{notes2Visible ? 'visible' : ''}}">
+    <view class="notes-conclusion">
+      <text class="conclusion-text">但即便是在如此困难的情况下，当时旅居南洋各地的华侨，怀着"国家兴亡，匹夫有责"的赤子之心，依然家批不断，积极响应祖国的号召，开展轰轰烈烈的抗日救亡运动，体现了华侨与祖国血浓于水的民族感情，更体现了中华民族强大的凝聚力和向心力。</text>
+    </view>
+  </view>
+
+  <!-- ========== 结尾印章 ========== -->
+  <view class="footer">
+    <view class="footer-divider"></view>
+    <view class="footer-seal">
+      <text class="footer-seal-text">家国</text>
+    </view>
+    <text class="footer-text">国际风云 · 波及南洋</text>
+    <text class="footer-sub">—— 馆藏侨批档案介绍（六）</text>
+  </view>
+
+  <!-- ========== 底部导航按钮 ========== -->
+  <view class="nav-buttons">
+    <button class="nav-btn nav-btn-back" bindtap="onPrevChapter">
+      <text class="nav-btn-icon nav-btn-icon-back">←</text>
+      <text class="nav-btn-label">上一章节</text>
+    </button>
+    <button class="nav-btn nav-btn-next" bindtap="onGoCatalog">
+      <text class="nav-btn-label">回到目录</text>
+      <text class="nav-btn-icon nav-btn-icon-next">≡</text>
+    </button>
+  </view>
+
+</view>

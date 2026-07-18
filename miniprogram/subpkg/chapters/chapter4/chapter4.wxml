@@ -1,0 +1,204 @@
+<!--chapter4.wxml-->
+<view class="content-page">
+
+  <!-- ========== 悬浮按钮 ========== -->
+  <view class="float-catalog" bindtap="onGoCatalog">
+    <text class="float-catalog-icon">目录</text>
+  </view>
+  <view class="float-home" bindtap="onGoHome">
+    <text class="float-home-icon">首页</text>
+  </view>
+
+  <!-- ========== Hero 侨批信纸首屏 ========== -->
+  <view class="hero-section">
+    <image class="hero-image" src="/subpkg/images/P4-1.jpg" mode="aspectFill"></image>
+    <view class="hero-mask"></view>
+    <view class="hero-content">
+      <text class="hero-subtitle">第 四 章</text>
+      <text class="hero-title">吾虽洋地</text>
+      <text class="hero-title-cn">志在家乡</text>
+      <view class="hero-divider"></view>
+      <text class="hero-desc">抗日战争时期潮汕侨批（二）</text>
+    </view>
+    <view class="scroll-hint">
+      <text class="scroll-hint-text">向下滑动开启</text>
+      <view class="scroll-hint-arrow"></view>
+    </view>
+  </view>
+
+  <!-- ========== 简介部分（不显示标题） ========== -->
+  <view class="section intro-section {{introVisible ? 'visible' : ''}}">
+    <view class="intro-corner corner-tl"></view>
+    <view class="intro-corner corner-tr"></view>
+    <view class="intro-corner corner-bl"></view>
+    <view class="intro-corner corner-br"></view>
+
+    <text class="intro-quote">"凡吾个人宜知国与家一体，须唤启精神，以御外侮，最后必有一日之所希望也……"</text>
+    <view class="intro-divider"></view>
+    <text class="intro-text">
+      在汕头市档案馆馆藏侨批中，有一封<text class="intro-em">泰国华侨陈维忠1937 年寄给母亲</text>的侨批，他因中日战事所阻而无法回乡探亲，信中满载着他对家乡的担忧和对家人的思念，更满载着他浓浓的家国情怀和顽强的斗争意志。
+    </text>
+  </view>
+
+  <!-- ========== 侨批原信图片（封面） ========== -->
+  <view class="section archive-section {{archiveVisible ? 'visible' : ''}}">
+    <view class="archive-frame">
+      <view class="archive-corner corner-tl"></view>
+      <view class="archive-corner corner-tr"></view>
+      <view class="archive-corner corner-bl"></view>
+      <view class="archive-corner corner-br"></view>
+
+      <view class="archive-tag">
+        <text class="archive-tag-text">馆 藏 原 件</text>
+      </view>
+
+      <image
+        class="archive-image"
+        src="/subpkg/images/P4-1.jpg"
+        mode="aspectFit"
+        bindtap="onPreviewImage"
+        data-src="/subpkg/images/P4-1.jpg"
+      ></image>
+
+      <view class="archive-caption">
+        <text class="archive-caption-line"></text>
+        <text class="archive-caption-text">丁丑捌月初三日 · 泰国华侨陈维忠寄母亲书（封面）</text>
+        <text class="archive-caption-line"></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 信封背面 ========== -->
+  <view class="section archive-section-2 {{archive2Visible ? 'visible' : ''}}">
+    <view class="archive-frame">
+      <view class="archive-corner corner-tl"></view>
+      <view class="archive-corner corner-tr"></view>
+      <view class="archive-corner corner-bl"></view>
+      <view class="archive-corner corner-br"></view>
+
+      <view class="archive-tag">
+        <text class="archive-tag-text">信 封 背 面</text>
+      </view>
+
+      <image
+        class="archive-image"
+        src="/subpkg/images/P4-2.jpg"
+        mode="aspectFit"
+        bindtap="onPreviewImage"
+        data-src="/subpkg/images/P4-2.jpg"
+      ></image>
+
+      <view class="archive-caption">
+        <text class="archive-caption-line"></text>
+        <text class="archive-caption-text">丁丑捌月十三日收 · 汕头顺成批局戳记</text>
+        <text class="archive-caption-line"></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 释文部分 ========== -->
+  <view class="section letter-section {{letterVisible ? 'visible' : ''}}">
+    <view class="letter-header">
+      <text class="letter-header-text">释 文</text>
+    </view>
+
+    <view class="letter-paper">
+      <text class="letter-salute">字奉慈亲大人膝下：</text>
+
+      <text class="letter-body">敬禀者，儿是次要回塘<text class="letter-note-num">（1）</text>视亲以慰母怀，因中日战争所阻，故未如愿。恐有大战必致乡民种种困难，实遭天祸之不幸也。刻俺乡中防险，不可不备。</text>
+
+      <text class="letter-body">生为国民份子，各有职任所在，若有一失，岂不是俺等之罪也？切要谨慎，勿以无忧。吾虽洋地，志在家乡。凡吾个人宜知国与家一体，须唤启精神，以御外侮，最后必有一日之所希望也。</text>
+
+      <text class="letter-body">纸短事长，不得尽表。今承轮船透汕之便，寄去中央币<text class="letter-note-num">（2）</text>叁拾元，到时查收，以应家用矣。余言后禀。</text>
+
+      <text class="letter-body">并祝安好！</text>
+
+      <view class="letter-signature">
+        <text class="letter-body">丁丑捌月初三日呈</text>
+        <text class="letter-body letter-strike">儿亿飞（陈维忠）</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 侨批信纸内页 ========== -->
+  <view class="section archive-section-3 {{archive3Visible ? 'visible' : ''}}">
+    <view class="archive-frame">
+      <view class="archive-corner corner-tl"></view>
+      <view class="archive-corner corner-tr"></view>
+      <view class="archive-corner corner-bl"></view>
+      <view class="archive-corner corner-br"></view>
+
+      <view class="archive-tag">
+        <text class="archive-tag-text">信 纸 内 页</text>
+      </view>
+
+      <image
+        class="archive-image archive-image-tall"
+        src="/subpkg/images/P4-3.jpg"
+        mode="aspectFit"
+        bindtap="onPreviewImage"
+        data-src="/subpkg/images/P4-3.jpg"
+      ></image>
+
+      <view class="archive-caption">
+        <text class="archive-caption-line"></text>
+        <text class="archive-caption-text">原信内页 · 末署"陈维忠书信"</text>
+        <text class="archive-caption-line"></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 注解部分 ========== -->
+  <view class="section notes-section {{notesVisible ? 'visible' : ''}}">
+    <view class="letter-header">
+      <text class="letter-header-text">注 解</text>
+    </view>
+
+    <view class="notes-list">
+      <view class="note-item {{notesVisible ? 'visible' : ''}}">
+        <text class="note-num">（1）</text>
+        <text class="note-text"><text class="note-bold">塘：</text>华侨、华裔对中国一种习惯称呼。也作"唐""唐山"。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.1s">
+        <text class="note-num">（2）</text>
+        <text class="note-text"><text class="note-bold">中央币：</text>国民政府中央银行发行的纸币。也作"中央票""中央国币""中央纸""中央法币""中央银"。</text>
+      </view>
+    </view>
+
+    <!-- 结语 -->
+    <view class="notes-conclusion {{notesVisible ? 'visible' : ''}}">
+      <text class="conclusion-text">信中，华侨陈维忠因战事受阻，未能如愿回乡探亲，他借此想到"恐有大战必致乡民种种困难，实遭天祸之不幸也"，可见他已不是局限于对家庭的关心，而是对整个家乡的热爱，正如他所说"吾虽洋地，志在家乡"。</text>
+    </view>
+
+    <view class="notes-conclusion {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.15s">
+      <text class="conclusion-text">并且，他更是嘱咐家人"切要谨慎"，不可麻痹大意，用"若有一失，岂不是俺等之罪也"强调了此时此刻提高警惕是身为"国民份子"的义务所在。同时，他强调家国一体，"凡吾个人宜知国与家一体"，国家的事情也是每个人的事情，要时刻与国家同荣辱、共命运。</text>
+    </view>
+
+    <view class="notes-conclusion {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.3s">
+      <text class="conclusion-text">最后，他充满希望地写到"须唤启精神，以御外侮，最后必有一日之所希望也"，这句话更是把他顽强的斗争精神体现出来。虽然抗日战争胜利已过去了78年，但是海外侨胞在国难当头，与家乡人民同仇敌忾纷纷捐款支援抗战的举动，他们"虽在洋地，志在家乡"的情怀早已铭刻在家乡人民的记忆之中。</text>
+    </view>
+  </view>
+
+  <!-- ========== 结尾印章 ========== -->
+  <view class="footer">
+    <view class="footer-divider"></view>
+    <view class="footer-seal">
+      <text class="footer-seal-text">家国</text>
+    </view>
+    <text class="footer-text">吾虽洋地 · 志在家乡</text>
+    <text class="footer-sub">—— 馆藏侨批档案介绍（四）</text>
+  </view>
+
+  <!-- ========== 底部导航按钮 ========== -->
+  <view class="nav-buttons">
+    <button class="nav-btn nav-btn-back" bindtap="onPrevChapter">
+      <text class="nav-btn-icon nav-btn-icon-back">←</text>
+      <text class="nav-btn-label">上一章节</text>
+    </button>
+    <button class="nav-btn nav-btn-next" bindtap="onNextChapter">
+      <text class="nav-btn-label">下一章节</text>
+      <text class="nav-btn-icon nav-btn-icon-next">→</text>
+    </button>
+  </view>
+
+</view>

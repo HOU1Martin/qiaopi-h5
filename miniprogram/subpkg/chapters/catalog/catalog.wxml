@@ -1,0 +1,42 @@
+<!--catalog.wxml-->
+<view class="catalog-page">
+  <view class="catalog-bg">
+    <image class="catalog-bg-img" src="/pages/index/image/P000.jpg" mode="aspectFill"></image>
+    <view class="catalog-bg-mask"></view>
+  </view>
+
+  <view class="catalog-content">
+    <view class="catalog-hero {{titleVisible ? 'visible' : ''}}">
+      <text class="catalog-subtitle">数 字 银 信 局</text>
+      <text class="catalog-title">馆藏侨批档案</text>
+      <view class="catalog-hero-line">
+        <text class="catalog-hero-dash">—</text>
+        <text class="catalog-hero-text">目  录</text>
+        <text class="catalog-hero-dash">—</text>
+      </view>
+    </view>
+
+    <view class="catalog-list">
+      <block wx:for="{{chapters}}" wx:key="id">
+        <view class="catalog-item {{itemVisible ? 'visible' : ''}}" style="transition-delay: {{item * 0.1}}s"
+          bindtap="onGoChapter" data-url="{{item.url}}">
+          <view class="catalog-item-num">
+            <text class="catalog-num-cn">{{item.cn}}</text>
+            <text class="catalog-num-en">CH.{{item.id}}</text>
+          </view>
+          <view class="catalog-item-body">
+            <text class="catalog-item-title">{{item.title}}</text>
+            <text class="catalog-item-sub">{{item.desc}}</text>
+          </view>
+          <view class="catalog-item-arrow">
+            <text class="arrow-icon">→</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view class="catalog-footer {{footerVisible ? 'visible' : ''}}">
+      <text class="catalog-footer-quote">侨批中的家国情怀</text>
+    </view>
+  </view>
+</view>

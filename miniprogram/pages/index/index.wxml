@@ -1,0 +1,82 @@
+<!--index.wxml-->
+<view class="page-root">
+
+  <!-- 流动背景 + 水波纹 -->
+  <view class="bg-layer" bindtouchstart="onPageTouch" bindtouchmove="onPageTouch">
+    <image class="bg-image" src="./image/P000.jpg" mode="aspectFill"></image>
+    <view class="bg-mask"></view>
+    <!-- 涟漪容器 -->
+    <block wx:for="{{ripples}}" wx:key="id">
+      <view class="ripple" style="left: {{item.x}}px; top: {{item.y}}px;"></view>
+    </block>
+  </view>
+
+  <!-- 标题 -->
+  <view class="title-area {{titleVisible ? 'visible' : ''}}">
+    <text class="title-main">侨批中的家国情怀</text>
+    <text class="title-sub">数 字 银 信 局</text>
+  </view>
+
+  <!-- 交互区 -->
+  <view class="main-area {{mainVisible ? 'visible' : ''}}">
+    <view class="userinfo">
+
+      <!-- 引导语 -->
+      <view class="userinfo-guide">
+        <text class="guide-text">标记你的信息</text>
+        <text class="guide-text guide-em">开始银信之旅吧！</text>
+      </view>
+
+      <!-- 未登录 -->
+      <block wx:if="{{canIUseNicknameComp && !hasUserInfo}}">
+        <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+          <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+        </button>
+        <view class="nickname-wrapper">
+          <text class="nickname-label">昵称</text>
+          <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange" />
+        </view>
+      </block>
+
+      <!-- 旧版兼容 -->
+      <block wx:elif="{{!hasUserInfo}}">
+        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+        <view wx:else> 请使用2.10.4及以上版本基础库 </view>
+      </block>
+
+      <!-- 已登录 -->
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+
+    <!-- 鎏金进入按钮 -->
+    <button class="enter-btn" bindtap="onEnter">
+      <text class="enter-btn-text">进入展览</text>
+      <view class="enter-btn-glow"></view>
+    </button>
+
+    <view class="usermotto">
+      <text class="user-motto">{{motto}}</text>
+    </view>
+  </view>
+
+  <!-- 信封弹窗 -->
+  <view class="envelope-overlay {{showEnvelope ? 'show' : ''}}" catchtap="onCloseEnvelope">
+    <view class="envelope-card" catchtap="noop">
+      <view class="envelope-close" bindtap="onCloseEnvelope">✕</view>
+      <view class="envelope-stamp">
+        <image class="envelope-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      </view>
+      <text class="envelope-name">{{userInfo.nickName}}</text>
+      <view class="envelope-divider"></view>
+      <text class="envelope-welcome">欢迎参观</text>
+      <text class="envelope-visitor">您是第 <text class="envelope-num">{{visitorNum}}</text> 号游客</text>
+      <view class="envelope-seal">
+        <text class="envelope-seal-text">侨批</text>
+      </view>
+    </view>
+  </view>
+
+</view>

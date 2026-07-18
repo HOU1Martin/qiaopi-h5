@@ -1,0 +1,226 @@
+<!--chapter1.wxml-->
+<view class="chapter1-page">
+
+  <!-- ========== 悬浮按钮 ========== -->
+  <view class="float-catalog" bindtap="onGoCatalog">
+    <text class="float-catalog-icon">目录</text>
+  </view>
+  <view class="float-home" bindtap="onGoHome">
+    <text class="float-home-icon">首页</text>
+  </view>
+
+  <!-- ========== Hero 侨批信纸首屏 ========== -->
+  <view class="hero-section">
+    <image class="hero-image" src="/subpkg/images/P1.jpg" mode="aspectFill"></image>
+    <view class="hero-mask"></view>
+    <view class="hero-content">
+      <text class="hero-subtitle">第 一 章</text>
+      <text class="hero-title">情长纸短</text>
+      <text class="hero-title-cn">寸墨难喧</text>
+      <view class="hero-divider"></view>
+      <text class="hero-desc">馆藏侨批档案介绍（一）</text>
+    </view>
+    <view class="scroll-hint">
+      <text class="scroll-hint-text">向下滑动开启</text>
+      <view class="scroll-hint-arrow"></view>
+    </view>
+  </view>
+
+  <!-- ========== 简介部分（不显示标题） ========== -->
+  <view class="section intro-section {{introVisible ? 'visible' : ''}}">
+    <view class="intro-corner corner-tl"></view>
+    <view class="intro-corner corner-tr"></view>
+    <view class="intro-corner corner-bl"></view>
+    <view class="intro-corner corner-br"></view>
+
+    <text class="intro-quote">"情长纸短，寸墨难喧，笔言不尽……"</text>
+    <view class="intro-divider"></view>
+    <text class="intro-text">
+      在汕头市档案馆藏侨批中，有一封<text class="intro-em">光绪七年辛巳十一月廿一日（1882.1.10）</text>叶和仁寄母亲钟氏书（详见《馆藏清代侨批选读》），留下了他对母亲的纯孝，对妻子的深情和对故里的一片乡愁。
+    </text>
+  </view>
+
+  <!-- ========== 侨批原信图片 ========== -->
+  <view class="section archive-section {{archiveVisible ? 'visible' : ''}}">
+    <view class="archive-frame">
+      <view class="archive-corner corner-tl"></view>
+      <view class="archive-corner corner-tr"></view>
+      <view class="archive-corner corner-bl"></view>
+      <view class="archive-corner corner-br"></view>
+
+      <view class="archive-tag">
+        <text class="archive-tag-text">馆 藏 原 件</text>
+      </view>
+
+      <image
+        class="archive-image"
+        src="/subpkg/images/P1.jpg"
+        mode="aspectFit"
+        bindtap="onPreviewImage"
+        data-src="/subpkg/images/P1.jpg"
+      ></image>
+
+      <view class="archive-caption">
+        <text class="archive-caption-line"></text>
+        <text class="archive-caption-text">光绪七年辛巳十一月廿一日 · 叶和仁寄母亲钟氏书</text>
+        <text class="archive-caption-line"></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 释文部分 ========== -->
+  <view class="section letter-section {{letterVisible ? 'visible' : ''}}">
+    <view class="letter-header">
+      <text class="letter-header-text">释 文</text>
+    </view>
+
+    <!-- 信纸容器 -->
+    <view class="letter-paper">
+      <!-- 抬头 -->
+      <text class="letter-salute">母亲大人膝下：</text>
+
+      <!-- 正文第一段 -->
+      <text class="letter-body">本月初接得阿坤兄带来书一封。捧读之下，诸事概悉。但读至亲病复发，儿不襟<text class="letter-note-ref">（禁）</text>心动，自念不孝之罪重矣。及至调治略愈，方得稍宽。现儿既远出在外，徒劳无益，万望吾亲宽心自解，勿以儿念念在心也。家中诸事当用则用，切勿吝惜。儿现年既长，自当谨守慈命，断不放肆，幸勿挂心怀。现今初到地方，诸事未悉，不能多串<text class="letter-note-ref">（赚）</text>钱财。看明年光景如何，方能多寄银钱。</text>
+
+      <!-- 第二段 -->
+      <text class="letter-body">再者，梁水兄带来洋银<text class="letter-note-num">⑴</text>弍大元，既信内写明，外又耳环花山虎<text class="letter-note-num">⑵</text>数件。此在信外寄的，未及批<text class="letter-note-num">⑶</text>明。见信之后，祈向他说明，收取可也。</text>
+
+      <!-- 第三段 -->
+      <text class="letter-body">兹今寄来洋银弍大元，以为母亲买肉之赀<text class="letter-note-num">⑷</text>。外又寄来银壹大元，交吾妻陈氏收用。情长纸短，寸墨难喧，笔言不尽，谨此奉禀。</text>
+
+      <!-- 请安 -->
+      <view class="letter-respects">
+        <text class="letter-body">大人万福金安</text>
+        <text class="letter-body">祖父大人福安</text>
+        <text class="letter-body">满门老幼均安</text>
+      </view>
+
+      <!-- 附言 -->
+      <text class="letter-body">前九月廿日马按<text class="letter-note-ref">（鞍）</text>山家其文叔寄银弍大元，又线钳<text class="letter-note-num">⑸</text>一支，衫三件，□□□二支，洋巾一条。家中收入，回信通知。</text>
+
+      <text class="letter-body">郁叔公分会<text class="letter-note-num">⑹</text>艮<text class="letter-note-ref">（银）</text>之事，未曾便有，出年寄回应用。</text>
+
+      <!-- 落款 -->
+      <view class="letter-signature">
+        <text class="letter-body">辛十一月廿一日</text>
+        <text class="letter-body letter-strike">不肖男和仁拜禀</text>
+      </view>
+
+      <!-- 分割线 -->
+      <view class="letter-separator">
+        <text class="letter-separator-text">外 封</text>
+      </view>
+
+      <!-- 外封部分 -->
+      <text class="letter-body envelope-text">内信烦台带至寨湾里吾母亲大人锺氏收入开拆</text>
+      <text class="letter-body envelope-text letter-strike">叶和仁拜</text>
+
+      <text class="letter-body">十月初八接得家富祥兄信一封，诸事打挷<text class="letter-note-num">⑺</text>。弟出年<text class="letter-note-num">⑻</text>冬回唐，敢请带至弟清仁店中，豪司教勳<text class="letter-note-num">⑼</text>。</text>
+
+      <view class="letter-auspice">
+        <text class="letter-auspice-text">顺 风 得 利</text>
+      </view>
+
+      <text class="letter-body letter-date">发十一月廿五日封</text>
+    </view>
+  </view>
+
+  <!-- ========== 注解部分 ========== -->
+  <view class="section notes-section {{notesVisible ? 'visible' : ''}}">
+    <view class="letter-header">
+      <text class="letter-header-text">注 解</text>
+    </view>
+
+    <view class="notes-list">
+      <view class="note-item {{notesVisible ? 'visible' : ''}}">
+        <text class="note-num">⑴</text>
+        <text class="note-text"><text class="note-bold">洋银：</text>旧称银币为"洋钱"、"洋银"，亦简称洋。如大洋、小洋。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.06s">
+        <text class="note-num">⑵</text>
+        <text class="note-text"><text class="note-bold">花山虎：</text>一种金首饰花色。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.12s">
+        <text class="note-num">⑶</text>
+        <text class="note-text"><text class="note-bold">批：</text>批写，写。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.18s">
+        <text class="note-num">⑷</text>
+        <text class="note-text"><text class="note-bold">赀：</text>"资"的异体字。资：财物、钱财。引申为钱、费用。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.24s">
+        <text class="note-num">⑸</text>
+        <text class="note-text"><text class="note-bold">线钳：</text>钳子的一种。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.3s">
+        <text class="note-num">⑹</text>
+        <text class="note-text"><text class="note-bold">会：</text>会，特指民间金融互助组织，如月兰会等。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.36s">
+        <text class="note-num">⑺</text>
+        <text class="note-text"><text class="note-bold">打挷：</text>客家"阿姆话"，意为"多谢"。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.42s">
+        <text class="note-num">⑻</text>
+        <text class="note-text"><text class="note-bold">出年：</text>潮梅方言，明年。出：超过。出年：过了年。</text>
+      </view>
+      <view class="note-item {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.48s">
+        <text class="note-num">⑼</text>
+        <text class="note-text"><text class="note-bold">豪司教勳：</text>客家"阿姆话"。意思未详。</text>
+      </view>
+    </view>
+
+    <!-- 结语 -->
+    <view class="notes-conclusion {{notesVisible ? 'visible' : ''}}">
+      <text class="conclusion-text">在信中，叶和仁得知母亲旧病复发，他便宽慰母亲"现儿既远出在外，徒劳无益，万望吾亲宽心自解，勿以儿念念在心也"，他又嘱咐母亲"家中诸事当用则用，切勿吝惜"。他又嘱咐妻子"洋银弍大元，以为母亲买肉之赀"，让妻子给母亲买肉来补身体。这一枚薄批、几句嘱言，加上任劳任怨、克勤克俭、一分一厘累积起来的血汗钱，充分体现了对亲人的深深的思念和拳拳关爱。</text>
+    </view>
+
+    <!-- 南洋家人照片 -->
+    <view class="family-section {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.1s">
+      <view class="family-frame">
+        <view class="family-tag">
+          <text class="family-tag-text">南洋家人</text>
+        </view>
+        <image
+          class="family-image"
+          src="/subpkg/images/P1-1.jpg"
+          mode="widthFix"
+          bindtap="onPreviewImage"
+          data-src="/subpkg/images/P1-1.jpg"
+        ></image>
+        <view class="family-caption">
+          <text class="family-caption-line"></text>
+          <text class="family-caption-text">光绪七年辛巳（1881）· 叶和仁寄母亲钟氏的南洋家人像片</text>
+          <text class="family-caption-line"></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="notes-conclusion {{notesVisible ? 'visible' : ''}}" style="animation-delay: 0.2s">
+      <text class="conclusion-text">叶家四位"男丁"历经数载，在南洋站稳脚跟，节衣缩食，逐渐有了积蓄，而馆藏叶和仁、叶清仁、叶礼仁三兄弟自清光绪七年辛巳（1881）起至清宣统二年庚戌（1910）期间遗存的批信一百余封侨批，不仅是一张张汇款凭证，而且是侨胞家史的真实见证。</text>
+    </view>
+  </view>
+
+  <!-- ========== 结尾印章 ========== -->
+  <view class="footer">
+    <view class="footer-divider"></view>
+    <view class="footer-seal">
+      <text class="footer-seal-text">家国</text>
+    </view>
+    <text class="footer-text">情长纸短，寸墨难喧</text>
+    <text class="footer-sub">—— 馆藏侨批档案介绍（一）</text>
+  </view>
+
+  <!-- ========== 底部导航按钮 ========== -->
+  <view class="nav-buttons">
+    <button class="nav-btn nav-btn-back" bindtap="onBackToCatalog">
+      <text class="nav-btn-icon nav-btn-icon-back">←</text>
+      <text class="nav-btn-label">回到目录</text>
+    </button>
+    <button class="nav-btn nav-btn-next" bindtap="onNextChapter">
+      <text class="nav-btn-label">下一章节</text>
+      <text class="nav-btn-icon nav-btn-icon-next">→</text>
+    </button>
+  </view>
+
+</view>
